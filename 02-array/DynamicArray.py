@@ -1,4 +1,5 @@
 import ctypes
+from typing import Self
 
 
 class DynamicArray:
@@ -31,6 +32,14 @@ class DynamicArray:
 
     def make_array(self, capacity):
         return (capacity * ctypes.py_object)()
+
+    def insert(self, index, item):
+        if self.__n == self.__capacity:
+            self._resize(self.__capacity * 2)
+        for j in range(self.__n, index, -1):
+            self.__A[j] = self.__A[j - 1]
+        self.__A[index] = item
+        self.__n += 1
 
     def remove(self, item):
         for k in range(self.__n):
