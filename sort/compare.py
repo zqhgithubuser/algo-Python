@@ -14,13 +14,16 @@ def get_random_data(number):
 
 def compare(n):
     bubble_sort_time = timeit.timeit(
-        lambda: bubble_sort(get_random_data(n)), number=100)
+        lambda: bubble_sort(get_random_data(n)), number=100
+    )
     selection_sort_time = timeit.timeit(
-        lambda: selection_sort(get_random_data(n)), number=100)
+        lambda: selection_sort(get_random_data(n)), number=100
+    )
     insertion_sort_time = timeit.timeit(
-        lambda: insertion_sort(get_random_data(n)), number=100)
+        lambda: insertion_sort(get_random_data(n)), number=100
+    )
 
-    print('=' * 50)
+    print("=" * 50)
     print(f"data length {n}:")
     print(f"Bubble Sort:    {bubble_sort_time:.6f} seconds")
     print(f"Selection Sort: {selection_sort_time:.6f} seconds")
